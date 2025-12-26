@@ -7,6 +7,12 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ---
 
+# Snapshot
+
+![macOS Desktop](Snapshot/Screenshot_2025-12-24_at_6.07.05_AM.png)
+
+---
+
 ## 🚀 macOS Compatibility
 
 | macOS Version | Status |
