@@ -1,6 +1,6 @@
-# 🍎 Hackintosh AMD EDITION EFI – ASUS TUF A17
+# 🍎 Hackintosh AMD EDITION EFI – ASUS TUF A17 (FA706IH)
 
-OpenCore EFI for running macOS on **ASUS TUF A17(FA706IH)**  
+OpenCore EFI for running macOS on **ASUS TUF A17**  
 Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 > ⚠️ This EFI is hardware-specific. Use it as a **reference**, not blindly.
@@ -85,10 +85,61 @@ Included SSDTs:
 
 ---
 
-## ⚠️ Known Issues
+## 🧗‍♂️ Booting macOS Installer on AMD (Literally a thorny path)
 
-- Installer may stall near final minutes if NVRAM routing is wrong
-- Some BIOS versions require manual dGPU disable
+Booting the macOS installer on **AMD laptops** is the hardest ost time-consuming part of the Hackintosh process.(For me, atleast)
+It took me **~7 days of trial, errors, reboot hell, pure brainstorm chaos and debugging** to finally reach a successful installer boot.
+
+This section documents **exactly what worked**, **what broke things**, and **why these settings matter**.
+
+### ⚠️ The Core Problem on AMD
+- AMD firmware handles **memory mapping and NVRAM very differently** from Intel
+- Settings that boot **Recovery** may still **break the installer**
+- Most installer failures happen due to:
+  - Incorrect Booter quirks
+  - Broken NVRAM routing
+  - Wrong UEFI driver order
+
+### 1️⃣ Booter → Quirks
+
+### ✅ Final Working Configuration
+Enabled:
+- `DevirtualiseMmio`
+- `EnableSafeModeSlide`
+- `ProvideCustomSlide`
+- `SetupVirtualMap`
+- `RebuildAppleMemoryMap`
+- `SyncRuntimePermissions`
+
+### 2️⃣ NVRAM → boot-args
+
+Final working boot arguments:
+```
+-v debug=0x100 keepsyms=1 -vi2c-force-polling -wegnoegpu
+```
+
+### 3️⃣ UEFI → Drivers
+
+Correct driver order is mandatory.
+
+1. `OpenVariableRuntimeDxe.efi` → **LoadEarly = true**
+2. `OpenRuntime.efi` → **LoadEarly = true**
+3. `HfsPlus.efi`
+4. `OpenCanopy.efi`
+5. `ResetNvramEntry.efi`
+
+### 4️⃣ UEFI → Quirks
+
+Enabled:
+- `EnableVectorAcceleration`
+- `RequestBootVarRouting`
+- `UnblockFsConnect`
+
+### Final Outcome
+After aligning **kernel patches, Booter quirks, NVRAM routing, and UEFI Setup**,  
+the macOS installer booted reliably and completed installation successfully.
+
+This EFI reflects the **final, stable configuration** after all that testing on Ryzen 5 4600H.
 
 ---
 
@@ -98,20 +149,26 @@ Included SSDTs:
 EFI
 ├── BOOT
 └── OC
-├── ACPI
-├── Drivers
-├── Kexts
-├── Resources
-└── config.plist
+    ├── ACPI
+    ├── Drivers
+    ├── Kexts
+    ├── Resources
+    ├── Tools
+    ├── config.plist
+    ├── oldConfig.plist
+    └── OpenCore.efi
 ```
 
 ---
 
 ## 🙌 Credits
 
-- **Acidanthera** – OpenCore, Lilu, AppleALC
-- **Dortania** – Documentation
-- **NootedRed** – AMD iGPU patches
+- **Acidanthera** – [OpenCorePkg](https://github.com/acidanthera/OpenCorePkg), [Lilu](https://github.com/acidanthera/Lilu), [AppleALC](https://github.com/acidanthera/AppleALC)
+- **Dortania** – Documentation, [USBToolbox](https://github.com/USBToolBox/kext), [USB Mapping](https://github.com/USBToolBox/tool)
+- **corpnewt** - [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)
+- **ChefKissInc** – [AMD iGPU patches](https://github.com/ChefKissInc/NootedRed)
+- **jwise** - [USB tethering](https://github.com/jwise/HoRNDIS), [ForgedInvariant](https://github.com/ChefKissInc/ForgedInvariant)
+- **ic005k** - [OCAuxiliary tool](https://github.com/ic005k/OCAuxiliaryTools)
 - Hackintosh community 🖤
 
 ---
@@ -119,5 +176,5 @@ EFI
 ## ⚠️ Disclaimer
 
 This project is provided **as-is**.  
-I am **not responsible** for data loss, hardware damage, or failed installs.  
-Proceed only if you know what you’re doing.
+I am **not responsible** for data loss, hardware damage, or failed installs.
+Proceed only if you know what you’re doing. 
