@@ -111,12 +111,16 @@ Enabled:
 - `RebuildAppleMemoryMap`
 - `SyncRuntimePermissions`
 
+![Booter](Snapshot/Booter.png)
+
 ### 2️⃣ NVRAM → boot-args
 
 Final working boot arguments:
 ```
 -v debug=0x100 keepsyms=1 -vi2c-force-polling -wegnoegpu
 ```
+
+![NVRAM](Snapshot/NVRAM.png)
 
 ### 3️⃣ UEFI → Drivers
 
@@ -128,12 +132,16 @@ Correct driver order is mandatory.
 4. `OpenCanopy.efi`
 5. `ResetNvramEntry.efi`
 
+![UEFI](Snapshot/UEFI.png)
+
 ### 4️⃣ UEFI → Quirks
 
 Enabled:
 - `EnableVectorAcceleration`
 - `RequestBootVarRouting`
 - `UnblockFsConnect`
+
+![UEFI-Quicks](Snapshot/UEFI-Quicks.png)
 
 ### Final Outcome
 After aligning **kernel patches, Booter quirks, NVRAM routing, and UEFI Setup**,  
