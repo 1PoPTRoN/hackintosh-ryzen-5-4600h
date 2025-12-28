@@ -122,6 +122,11 @@ Final working boot arguments:
 
 ![NVRAM](Snapshot/NVRAM.png)
 
+NOTE: if macOS installer got stuck while installation part, enable few checkboxs:
+- `LegacyEnable` - YES
+- `LegacyOverwrite` - YES
+- `WriteFlash` - YES
+
 ### 3️⃣ UEFI → Drivers
 
 Correct driver order is mandatory.
