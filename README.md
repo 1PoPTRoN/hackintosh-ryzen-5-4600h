@@ -1,4 +1,4 @@
-# 🍎 Hackintosh AMD EDITION EFI – ASUS TUF A17 (FA706IH)
+# Hackintosh AMD EDITION EFI – ASUS TUF A17 (FA706IH)
 
 OpenCore EFI for running macOS on **ASUS TUF A17**  
 Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
@@ -13,7 +13,7 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ---
 
-## 🚀 macOS Compatibility
+## > macOS Compatibility
 
 | macOS Version | Status |
 |-------------|--------|
@@ -22,7 +22,7 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ---
 
-## 🖥️ Hardware Specs
+## > Hardware Specs
 
 | Component | Details |
 |---------|--------|
@@ -39,7 +39,7 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ---
 
-## ✅ What Works
+## > What Works
 
 - ✔ macOS boot & install
 - ✔ Hardware acceleration (AMD iGPU)
@@ -52,14 +52,14 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ---
 
-## ❌ What Doesn’t Work
+## > What Doesn’t Work
 
 - ❌ NVIDIA GTX 1650 (no macOS support)
 - ❌ Sidecar / Universal Control
 
 ---
 
-## 🧩 ACPI Patches & SSDTs
+## > ACPI Patches & SSDTs
 
 Included SSDTs:
 
@@ -75,7 +75,7 @@ Included SSDTs:
 
 ---
 
-## 🖥️ Graphics Notes (NootedRed)
+## > Graphics Notes (NootedRed)
 
 - Uses **NootedRed** for AMD iGPU acceleration
 - If internal display is black:
@@ -85,7 +85,7 @@ Included SSDTs:
 
 ---
 
-## 🧗‍♂️ Booting macOS Installer on AMD (Literally a thorny path)
+## > Booting macOS Installer on AMD (Literally a thorny path)
 
 Booting the macOS installer on **AMD laptops** is the hardest ost time-consuming part of the Hackintosh process.(For me, atleast)
 It took me **~7 days of trial, errors, reboot hell, pure brainstorm chaos and debugging** to finally reach a successful installer boot.
@@ -148,7 +148,7 @@ Enabled:
 
 ![UEFI-Quicks](Snapshot/UEFI-Quicks.png)
 
-### Final Outcome
+### - Final Outcome
 After aligning **kernel patches, Booter quirks, NVRAM routing, and UEFI Setup**,  
 the macOS installer booted reliably and completed installation successfully.
 
@@ -156,7 +156,7 @@ This EFI reflects the **final, stable configuration** after all that testing on 
 
 ---
 
-## 📂 EFI Structure
+## > EFI Structure
 
 ```bash
 EFI
