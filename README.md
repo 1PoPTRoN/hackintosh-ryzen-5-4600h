@@ -11,6 +11,8 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ![macOS Desktop](Snapshot/Screenshot_2025-12-24_at_6.07.05_AM.png)
 
+![macOS Desktop](Snapshot/Screenshot_2026-01-07_at_4.16.29_PM.png)
+
 ---
 
 ## > macOS Compatibility
@@ -18,7 +20,8 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 | macOS Version | Status |
 |-------------|--------|
 | Monterey (12.x) | ✅ Stable |
-| Ventura (13.x) | 🟡 On-going |
+| Ventura (13.x) | ✅ Stable |
+| Sonoma (14.x) | 🟡 On-going |
 
 ---
 
@@ -54,8 +57,9 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ## > What Doesn’t Work
 
-- ❌ NVIDIA GTX 1650 (no macOS support)
+- ❌ NVIDIA GTX 1650 (till now, doesn't support)
 - ❌ Sidecar / Universal Control
+- ❌ WiFi/Bluetooth (Realtek has no macOS support)
 
 ---
 
@@ -153,6 +157,11 @@ After aligning **kernel patches, Booter quirks, NVRAM routing, and UEFI Setup**,
 the macOS installer booted reliably and completed installation successfully.
 
 This EFI reflects the **final, stable configuration** after all that testing on Ryzen 5 4600H.
+
+### 💡 Bonus
+Fix Real-Time Clock on macOS
+
+![real-time clock](Snapshot/Real-Time Clock.png)
 
 ---
 
