@@ -175,10 +175,7 @@ EFI
     ├── Drivers
     ├── Kexts
     ├── Resources
-    ├── Tools
-    ├── config.plist
-    ├── oldConfig.plist
-    └── OpenCore.efi
+    └── Tools
 ```
 
 ---
