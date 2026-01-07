@@ -159,9 +159,9 @@ the macOS installer booted reliably and completed installation successfully.
 This EFI reflects the **final, stable configuration** after all that testing on Ryzen 5 4600H.
 
 ### 💡 Bonus
-Fix Real-Time Clock on macOS
+Fix Real-Time Clock on macOS (add 2nd line as it is)
 
-![real-time clock](Snapshot/Real-Time Clock.png)
+![real-time clock](Snapshot/Real-Time_Clock.png)
 
 ---
 
