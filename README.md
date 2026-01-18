@@ -19,11 +19,13 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 
 ## > macOS Compatibility
 
-| macOS Version | Status |
-|-------------|--------|
-| Monterey (12.x) | ✅ Stable |
-| Ventura (13.x) | ✅ Stable |
-| Sonoma (14.x) | 🟡 On-going |
+| macOS Version | Version | Status |
+|-------------|-------|--------|
+| Monterey | (12.x) | ✅ Stable |
+| Ventura | (13.x) | ✅ Stable |
+| Sonoma | (14.x) | ✅ Stable |
+| Sequioa | (15.x) | 🟡 On-going |
+| Tahoe | (26.x) | 🟡 On-going |
 
 ---
 
