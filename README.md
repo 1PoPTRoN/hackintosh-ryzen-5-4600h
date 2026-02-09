@@ -16,6 +16,8 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 ![macOS Desktop](Snapshot/Screenshot_2026-01-15_at_5.11.47_AM.png)
 
 ![macOS Desktop](Snapshot/wasd.png)
+
+![macOS Desktop](Snapshot/Screenshot_2026-01-14_at_7.36.10_PM.png)
 ---
 
 ## > macOS Compatibility
@@ -26,7 +28,7 @@ Tested on **AMD Ryzen 5 4600H** with **Radeon iGPU (NootedRed)**.
 | Ventura | (13.x) | ✅ Stable |
 | Sonoma | (14.x) | ✅ Stable |
 | Sequoia | (15.x) | ✅ Stable |
-| Tahoe | (26.x) | 🟡 On-going |
+| Tahoe | (26.x) | ✅ Stable |
 
 ---
 
